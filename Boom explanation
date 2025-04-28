@@ -1,0 +1,18 @@
+What is Boom in hapi js 
+Boom is a tiny library that works with (but also outside) Hapi.js. It's used for creating standardized HTTP error responses easily.
+It helps to have clean and structured error messages 
+Example 
+const Boom = require('@hapi/boom');
+
+// Create a 404 Not Found error
+const notFoundError = Boom.notFound('This page does not exist.');
+
+console.log(notFoundError.output);
+Other Boom error handling functions 
+Method	HTTP Status	Description
+Boom.badRequest(message)	400	Invalid request from client
+Boom.unauthorized(message)	401	Authentication failure
+Boom.forbidden(message)	403	Authenticated but not allowed
+Boom.notFound(message)	404	Resource not found
+Boom.internal(message)	500	Internal server error
+Boom.conflict(message)	409	Conflict (e.g., duplicate entry)
